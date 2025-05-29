@@ -1,0 +1,40 @@
+﻿<MudContainer MaxWidth="MaxWidth.Large" Class="mb-16" id="work" Style="scroll-margin-top: 70px;">
+    <MudText Typo="Typo.h4" Class="mb-8 d-flex justify-center" Style="font-weight: bold;">
+        Work
+    </MudText>
+    <MudGrid Spacing="4">
+        @foreach (var project in projects)
+        {
+            <MudItem xs="12" sm="6" md="4">
+                <MudCard Elevation="2" Style="height: 100%;">
+                    <MudCardMedia Image="@project.ImageUrl" Height="200" />
+                    <MudCardContent>
+                        <MudText Typo="Typo.h6" Class="mb-2">@project.Title</MudText>
+                        <MudText Typo="Typo.body2" Class="mb-1">@project.Description</MudText>
+                    </MudCardContent>
+                    <MudCardActions Class="d-flex justify-center gap-4">
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Dark"
+                                   Size="Size.Medium"
+                                   Href="@project.PreviewUrl"
+                                   Target="_blank"
+                                   StartIcon=@Icons.Material.Filled.RemoveRedEye
+                                   Class="flex-grow-1"
+                                   style="background-color: var(--mud-palette-text-primary); color: var(--mud-palette-background);">
+                            Preview
+                        </MudButton>
+                        <MudButton Variant="Variant.Outlined"
+                                   Color="Color.Default"
+                                   Size="Size.Medium"
+                                   Href="@project.GithubUrl"
+                                   Target="_blank"
+                                   StartIcon=@Icons.Custom.Brands.GitHub
+                                   Class="flex-grow-1">
+                            Repo
+                        </MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+</MudContainer>

@@ -1,0 +1,10 @@
+﻿.text-background {
+    color: var(--mud-palette-background);
+    background-color: var(--mud-palette-text-primary);
+}
+
+.avatar-style {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
