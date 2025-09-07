@@ -10,8 +10,14 @@ public partial class Contact
 
     private bool success;
     private bool sending;
-    private MudForm form;
+    private MudForm? form;
     private ContactModel contactModel = new();
+
+    private bool CanSubmit =>
+    !string.IsNullOrWhiteSpace(contactModel.Name) &&
+    !string.IsNullOrWhiteSpace(contactModel.Email) &&
+    !string.IsNullOrWhiteSpace(contactModel.Message) &&
+    success;
 
     private async Task SendEmail()
     {

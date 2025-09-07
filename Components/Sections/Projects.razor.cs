@@ -2,7 +2,7 @@
 
 namespace AbbiePortfolio.Components.Sections;
 
-public partial class Work
+public partial class Projects
 {
     private List<ProjectModel> projects = new()
     {

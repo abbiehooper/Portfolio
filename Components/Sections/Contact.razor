@@ -4,49 +4,47 @@
     </MudText>
     <MudCard Elevation="2">
         <MudCardContent>
-            <MudForm @ref="form" @bind-IsValid="@success">
+            <MudForm @ref="form" @bind-IsValid="@success" ValidationDelay="0">
                 <MudTextField T="string"
                               Label="Name"
-                              Required="true"
-                              RequiredError="Name is required"
                               @bind-Value="contactModel.Name"
+                              For="@(() => contactModel.Name)"
+                              Immediate="true"
                               Variant="Variant.Outlined"
                               Class="mb-4" />
-
                 <MudTextField T="string"
                               Label="Email Address"
-                              Required="true"
-                              RequiredError="Email is required"
                               @bind-Value="contactModel.Email"
+                              For="@(() => contactModel.Email)"
+                              Immediate="true"
                               Variant="Variant.Outlined"
                               Class="mb-4" />
-
                 <MudTextField T="string"
                               Label="Message"
                               Lines="5"
-                              Required="true"
-                              RequiredError="Message is required"
                               @bind-Value="contactModel.Message"
+                              For="@(() => contactModel.Message)"
+                              Immediate="true"
                               Variant="Variant.Outlined"
                               Class="mb-4" />
-
-                <MudButton Variant="Variant.Filled"
-                           Color="Color.Dark"
-                           Disabled="@(!success || sending)"
-                           OnClick="@SendEmail"
-                           StartIcon=@Icons.Custom.Brands.Telegram>
-
-                    @if (sending)
-                    {
-                        <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
-                        <span>Sending...</span>
-                    }
-                    else
-                    {
-                        <span>Send Message</span>
-                    }
-
-                </MudButton>
+                <div class="d-flex justify-end">
+                    <MudButton Variant="Variant.Filled"
+                               FullWidth=false
+                               Color="Color.Primary"
+                               Disabled="@(!CanSubmit || sending)"
+                               OnClick="@SendEmail"
+                               StartIcon=@Icons.Custom.Brands.Telegram>
+                        @if (sending)
+                        {
+                            <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+                            <span>Sending...</span>
+                        }
+                        else
+                        {
+                            <span>Send Message</span>
+                        }
+                    </MudButton>
+                </div>
             </MudForm>
         </MudCardContent>
     </MudCard>
