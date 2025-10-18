@@ -12,7 +12,7 @@
         <MudButton Variant="Variant.Text" Color="Color.Default" OnClick="@(() => ScrollToSection("projects"))">Projects</MudButton>
         <MudButton Variant="Variant.Text" Color="Color.Default" OnClick="@(() => ScrollToSection("contact"))">Contact</MudButton>
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Default" Href="https://github.com/abbie-codes" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Default" Href="https://github.com/abbiehooper" Target="_blank" />
         <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Default" Href="https://www.linkedin.com/in/abbie-unwin-035104186/" Target="_blank" />
         <MudIconButton Icon="@(_isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)" Color="Color.Default" OnClick="@DarkModeToggle" />
     </MudAppBar>
@@ -50,7 +50,8 @@
         {
             PaletteLight = _lightPalette,
             PaletteDark = _darkPalette,
-            LayoutProperties = new LayoutProperties()
+            LayoutProperties = new LayoutProperties(),
+            Typography = _typography,
         };
     }
 
@@ -101,6 +102,22 @@
         TableLines = "#33323e",
         Divider = "#292838",
         OverlayLight = "#1e1e2d80",
+    };
+
+    private static readonly string[] headingFontArray = new[] { "Space Grotesk", "Helvetica", "Arial", "sans-serif" };
+
+    private readonly Typography _typography = new Typography()
+    {
+        Default = new DefaultTypography()
+        {
+            FontFamily = new[] { "DM Sans", "Helvetica", "Arial", "sans-serif" },
+        },
+        H1 = new H1Typography { FontFamily = headingFontArray },
+        H2 = new H2Typography { FontFamily = headingFontArray },
+        H3 = new H3Typography { FontFamily = headingFontArray },
+        H4 = new H4Typography { FontFamily = headingFontArray },
+        H5 = new H5Typography { FontFamily = headingFontArray },
+        H6 = new H6Typography { FontFamily = headingFontArray }
     };
 
     public string DarkLightModeButtonIcon => _isDarkMode switch
