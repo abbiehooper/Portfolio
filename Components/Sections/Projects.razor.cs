@@ -4,9 +4,9 @@ namespace AbbiePortfolio.Components.Sections;
 
 public partial class Projects
 {
-    private List<ProjectModel> projects = new()
+    private List<Project> projects = new()
     {
-        new ProjectModel
+        new Project
         {
             Title = "E-Commerce Platform",
             Description = "A full-featured online shopping platform built with Blazor Server and Entity Framework Core. Features include user authentication, shopping cart, and payment integration.",
@@ -14,7 +14,7 @@ public partial class Projects
             PreviewUrl = "https://example.com",
             GithubUrl = "https://github.com/yourusername/ecommerce"
         },
-        new ProjectModel
+        new Project
         {
             Title = "Task Management System",
             Description = "A collaborative task management application with real-time updates using SignalR. Includes project boards, team collaboration, and progress tracking.",
@@ -22,7 +22,7 @@ public partial class Projects
             PreviewUrl = "https://example.com",
             GithubUrl = "https://github.com/yourusername/taskmanager"
         },
-        new ProjectModel
+        new Project
         {
             Title = "Weather Dashboard",
             Description = "A responsive weather dashboard that displays real-time weather data and forecasts. Built with Blazor WebAssembly and integrates with weather APIs.",

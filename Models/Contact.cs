@@ -2,7 +2,7 @@
 
 namespace AbbiePortfolio.Models;
 
-public class ContactModel
+public class Contact
 {
     [Required(ErrorMessage = "Name is required")]
     [StringLength(100, ErrorMessage = "Name must be less than 100 characters")]

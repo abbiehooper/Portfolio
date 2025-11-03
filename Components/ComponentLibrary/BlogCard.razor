@@ -1,0 +1,29 @@
+﻿<MudCard Elevation="2" Class="blog-post-card" Style="height: 100%; display: flex; flex-direction: column;">
+    <MudCardMedia Image="@BlogPost.ImageUrl" Height="300" Class="card-image" />
+    <MudCardContent Class="card-content" Style="flex-grow: 1; display: flex; flex-direction: column;">
+        <div class="card-header d-flex w-100 justify-space-between">
+            <MudText Typo="Typo.caption" Color="Color.Secondary" Style="font-weight: 800;">@BlogPost.Category</MudText>
+            <MudText Typo="Typo.caption" Color="Color.Secondary" Style="font-weight: 800;">@BlogPost.SubCategory</MudText>
+        </div>
+        <div class="card-date">
+            <MudText Typo="Typo.caption" Color="Color.Secondary">@BlogPost.PublishedDate</MudText>
+        </div>
+        <MudText Typo="Typo.h6" Class="card-title mb-2">@BlogPost.Title</MudText>
+        <MudText Typo="Typo.body2" Color="Color.Secondary" Class="card-description mb-0" Style="flex-grow: 1;">
+            @BlogPost.Description
+        </MudText>
+    </MudCardContent>
+    <MudCardActions Class="card-actions justify-end" Style="margin-top: -16px;">
+        <MudLink Href="@BlogPost.PostUrl" Typo="Typo.body2" Class="read-more-link d-flex align-items-centre ">
+            Read post
+            <MudIcon Icon="@Icons.Material.Filled.ArrowForward" Size="Size.Small" Class="ml-1" />
+        </MudLink>
+    </MudCardActions>
+</MudCard>
+
+@code {
+
+    [Parameter]
+    public required BlogPost BlogPost { get; set; }
+
+}

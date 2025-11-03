@@ -1,23 +1,21 @@
 using AbbiePortfolio.Components;
 using MudBlazor;
 using MudBlazor.Services;
+using static AbbiePortfolio.Startup.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MudBlazor services
-builder.Services.AddMudServices(config =>
-{
-    config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
-    config.SnackbarConfiguration.SnackbarVariant = Variant.Text;
-});
-
-// Add services to the container.
-builder.Services.AddRazorComponents()
+builder.Services.SetupDI()
+    .AddMudServices(config =>
+    {
+        config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
+        config.SnackbarConfiguration.SnackbarVariant = Variant.Text;
+    })
+    .AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
@@ -26,10 +24,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
 app.UseAntiforgery();
-
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

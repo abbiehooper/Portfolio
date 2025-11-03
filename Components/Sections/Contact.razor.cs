@@ -11,7 +11,7 @@ public partial class Contact
     private bool success;
     private bool sending;
     private MudForm? form;
-    private ContactModel contactModel = new();
+    private Models.Contact contactModel = new();
 
     private bool CanSubmit =>
     !string.IsNullOrWhiteSpace(contactModel.Name) &&
@@ -32,7 +32,7 @@ public partial class Contact
             Snackbar.Add("Message sent successfully! I'll get back to you soon.", Severity.Success);
 
             // Reset form
-            contactModel = new ContactModel();
+            contactModel = new Models.Contact();
             form.ResetValidation();
         }
         catch (Exception ex)
