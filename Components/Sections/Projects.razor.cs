@@ -4,15 +4,15 @@ namespace AbbiePortfolio.Components.Sections;
 
 public partial class Projects
 {
-    private List<Project> projects = new()
-    {
+    private List<Project> projects =
+    [
         new Project
         {
-            Title = "E-Commerce Platform",
-            Description = "A full-featured online shopping platform built with Blazor Server and Entity Framework Core. Features include user authentication, shopping cart, and payment integration.",
-            ImageUrl = "https://via.placeholder.com/400x200",
+            Title = "Policy Expert",
+            Description = "AI-powered insurance policy chatbot that answers questions about policy documents using Claude API with intelligent citation tracking and cost-optimized prompt caching.",
+            ImageUrl = "/images/Projects/PolicyChatbot.png",
             PreviewUrl = "https://example.com",
-            GithubUrl = "https://github.com/yourusername/ecommerce"
+            GithubUrl = "https://github.com/abbiehooper/PolicyChatbot"
         },
         new Project
         {
@@ -30,5 +30,5 @@ public partial class Projects
             PreviewUrl = "https://example.com",
             GithubUrl = "https://github.com/yourusername/weather"
         }
-    };
+    ];
 }
