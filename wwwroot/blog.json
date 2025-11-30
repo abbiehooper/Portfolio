@@ -13,9 +13,9 @@
     "Description": "I created a simple app to test out CI/CD concepts, build pipelines, docker containerization, deployment strategies, health checks, application logging and observability.",
     "Category": "Architecture",
     "SubCategory": "DevOps & Infrastructure",
-    "PostUrl": "/",
+    "PostUrl": "https://medium.com/@abigailunwin/from-code-to-cloud-building-my-first-ci-cd-pipeline-with-health-checks-and-monitoring-b3b4e3f1d152",
     "ImageUrl": "/images/BlogCard/CodeToCloud.jpeg",
-    "PublishedDate": "28/10/2025"
+    "PublishedDate": "18/11/2025"
   },
   {
     "Title": "Why Is My App Slow? A Detective Story",
