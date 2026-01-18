@@ -1,0 +1,45 @@
+﻿<MudButton 
+    Variant="Variant.Text" 
+    Color="Color.Default" 
+    OnClick="@(() => NavigateToSection(SectionId))"
+    Class="section-link"
+    Style="@($"--hover-color: {HoverColour}")">
+    <MudText>@Title</MudText>
+</MudButton>
+
+@code {
+
+    [Parameter]
+    public string SectionId { get; set; } = string.Empty;
+
+    [Parameter]
+    public required string Title { get; set; } 
+
+    [Parameter]
+    public required string HoverColour { get; set; }
+
+    [Inject]
+    public required IJSRuntime JSRuntime { get; set; }
+
+    [Inject]
+    public required NavigationManager NavigationManager { get; set; }
+
+    private async Task NavigateToSection(string section)
+    {
+        bool isHomePage = NavigationManager.ToBaseRelativePath(NavigationManager.Uri) == "";
+
+        if (isHomePage)
+        {
+            await ScrollToSection(section);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/#" + section);
+        }
+    }
+
+    private async Task ScrollToSection(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", sectionId);
+    }
+}

@@ -1,0 +1,34 @@
+﻿@using AbbiePortfolio.Components.Pages
+<MudAppBar Elevation="0" Fixed="true">
+    <div style="flex: 1; display: flex; justify-content: flex-start;">
+        <MudButton Variant="Variant.Text">
+            <MudText Typo="Typo.h4" Color="Color.Primary" Style="font-weight:bold;">Abbie Hooper</MudText>
+        </MudButton>
+    </div>
+
+    <div style="display: flex; gap: 24px;">
+        <NavigateToSectionLink SectionId="projects" Title="Projects" HoverColour="@Colors.Pink.Lighten4" />
+        <NavigateToSectionLink SectionId="blog" Title="Blog" HoverColour="@Colors.Blue.Lighten4" />
+        <NavigateToSectionLink SectionId="contact" Title="Contact" HoverColour="@Colors.Green.Lighten4" />
+    </div>
+
+    <div style="flex: 1; display: flex; justify-content: flex-end;">
+        <MudIconButton Icon="@(IsDarkMode? Icons.Material.Outlined.LightMode : Icons.Material.Outlined.DarkMode)"
+                       Style="@($"color: #000; background:{Colors.DeepOrange.Lighten4};")"
+                       OnClick="@DarkModeToggle" />
+    </div>
+</MudAppBar>
+
+@code {
+    [Parameter]
+    public bool IsDarkMode { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> IsDarkModeChanged { get; set; }
+
+    private void DarkModeToggle()
+    {
+        IsDarkMode = !IsDarkMode;
+        IsDarkModeChanged.InvokeAsync(IsDarkMode);
+    }
+}
