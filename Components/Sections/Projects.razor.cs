@@ -11,24 +11,16 @@ public partial class Projects
             Title = "Policy Expert",
             Description = "AI-powered insurance policy chatbot that answers questions about policy documents using Claude API with intelligent citation tracking and cost-optimized prompt caching.",
             ImageUrl = "/images/Projects/PolicyChatbot.png",
-            PreviewUrl = "https://example.com",
+            PreviewUrl = "https://policy-expert-wydkh.ondigitalocean.app/",
             GithubUrl = "https://github.com/abbiehooper/PolicyChatbot"
         },
         new Project
         {
-            Title = "Task Management System",
-            Description = "A collaborative task management application with real-time updates using SignalR. Includes project boards, team collaboration, and progress tracking.",
-            ImageUrl = "https://via.placeholder.com/400x200",
-            PreviewUrl = "https://example.com",
-            GithubUrl = "https://github.com/yourusername/taskmanager"
+            Title = "Survey Hub",
+            Description = "A .NET 8 Blazor web application for uploading, managing, and analyzing surveys. Built with MudBlazor for a modern Material Design UI.",
+            ImageUrl = "/images/Projects/DeveloperExperience.png",
+            GithubUrl = "https://github.com/abbiehooper/DeveloperExperience"
         },
-        new Project
-        {
-            Title = "Weather Dashboard",
-            Description = "A responsive weather dashboard that displays real-time weather data and forecasts. Built with Blazor WebAssembly and integrates with weather APIs.",
-            ImageUrl = "https://via.placeholder.com/400x200",
-            PreviewUrl = "https://example.com",
-            GithubUrl = "https://github.com/yourusername/weather"
-        }
+
     ];
 }

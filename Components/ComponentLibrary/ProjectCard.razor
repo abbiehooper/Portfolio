@@ -6,15 +6,19 @@
             <MudText Typo="Typo.body2" Class="mb-1">@Description</MudText>
         </MudCardContent>
         <MudCardActions Class="d-flex justify-center gap-4">
-            <MudButton Variant="Variant.Filled"
-                       Color="Color.Primary"
-                       Size="Size.Medium"
-                       Href="@PreviewUrl"
-                       Target="_blank"
-                       StartIcon=@Icons.Material.Filled.RemoveRedEye
-                       Class="flex-grow-1">
-                Preview
-            </MudButton>
+            @if (!string.IsNullOrWhiteSpace(PreviewUrl))
+            {
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           Size="Size.Medium"
+                           Href="@PreviewUrl"
+                           Target="_blank"
+                           StartIcon=@Icons.Material.Filled.RemoveRedEye
+                           Class="flex-grow-1">
+                    Preview
+                </MudButton>
+            }
+            
             <MudButton Variant="Variant.Outlined"
                        Color="Color.Primary"
                        Size="Size.Medium"
