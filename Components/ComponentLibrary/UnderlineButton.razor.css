@@ -1,0 +1,36 @@
+﻿.underline-button {
+    position: relative; 
+    display: inline-block; 
+    overflow: hidden; 
+    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+    border: none;
+    border-bottom: 1px solid var(--mud-palette-primary);
+    width: fit-content;
+    color: var(--mud-palette-primary);
+    padding-bottom: 8px;
+    z-index: 1;
+}
+
+    .underline-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--hover-color, #FFCCBC);
+        transition: width 0.3s ease-out;
+        z-index: 0;
+        pointer-events: none;
+        box-sizing: border-box;
+    }
+
+    .underline-button:hover::before,
+    .underline-button:focus::before {
+        width: 100%;
+    }
+
+.underline-button-text {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,46 @@
+﻿@using AbbiePortfolio.Components.ComponentLibrary
+<section class="hero-section">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudGrid Justify="Justify.Center" Spacing="6">
+            @* Profile Image with Grid Background *@
+            <MudItem xs="12" md="5" Class="d-flex justify-center justify-md-end align-center">
+                <div class="hero-image-container">
+                    <div class="grid-background">
+                        <div class="resize-handle handle-top-left"></div>
+                        <div class="resize-handle handle-top-right"></div>
+                        <div class="resize-handle handle-bottom-left"></div>
+                        <div class="resize-handle handle-bottom-right"></div>
+                    </div>
+                    <img src="images/profile.png"
+                         alt="Abbie - Full Stack Developer"
+                         class="hero-image" />
+                    
+                    @* Tick Pills - MUST be inside hero-image-container for positioning *@
+                    <TickPill Text="ASP.NET Engineer" ContainerClass="tick-one"/>
+                    <TickPill Text="UI/UX Designer" ContainerClass="tick-two"/>
+                    <TickPill Text="Azure Certified" ContainerClass="tick-three"/>
+                </div>
+            </MudItem>
+            @* Hero Content *@
+            <MudItem xs="12" md="7" Class="d-flex align-center">
+                <div class="hero-content">
+                    <MudText Typo="Typo.h3" Style="line-height: 0" Class="fade-in-item fade-in-1">
+                        <span class="hero-title">
+                            <span>Hi, I'm Abbie and I'm<br /> a</span>
+                            <span class="highlight typewriter">Full Stack Developer</span>
+                            <span class="cursor">|</span>
+                        </span>
+                    </MudText>
+                    <MudText Typo="Typo.body1" Class="fade-in-item fade-in-2">
+                        With over 3 years of experience as a full stack software engineer
+                        for global insurance company Howden. I'm passionate about creating
+                        web applications that deliver great user experiences.
+                    </MudText>
+                    <div class="fade-in-item fade-in-3">
+                        <UnderlineButton Text="Download my CV →" />
+                    </div>
+                </div>
+            </MudItem>
+        </MudGrid>
+    </MudContainer>
+</section>

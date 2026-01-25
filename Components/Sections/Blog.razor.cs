@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using System.Text.Json;
 
-namespace AbbiePortfolio.Components.Pages;
+namespace AbbiePortfolio.Components.Sections;
 
 public partial class Blog
 {
@@ -12,14 +12,12 @@ public partial class Blog
     [Inject]
     public required NavigationManager Navigation { get; set; }
 
-    private List<BlogPost> Blogs = [];
+    private List<BlogPost> Blogs = new();
 
     protected override async Task OnInitializedAsync()
     {
         await LoadBlogPostsAsync();
     }
-
-    private List<BlogPost> GetBlogPosts(string category) => [.. Blogs.Where(blog => blog.Category == category)];
 
     private async Task LoadBlogPostsAsync()
     {

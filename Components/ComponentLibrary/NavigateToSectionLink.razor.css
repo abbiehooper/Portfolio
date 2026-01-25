@@ -1,18 +1,10 @@
-﻿:root {
-    --hover-color: #FFCCBC;
-    --mud-typography-h3-lineheight: 0.5;
-}
-
-.mud-input-label {
-    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
-}
-
-.section-link {
+﻿.section-link {
     position: relative;
     overflow: hidden;
     border-radius: 0;
     font-weight: 600;
     padding: 2px 8px;
+    color: black;
 }
 
     .section-link::before {

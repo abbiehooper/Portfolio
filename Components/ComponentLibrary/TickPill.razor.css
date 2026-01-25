@@ -1,0 +1,25 @@
+﻿.pill-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: #f8b4c4;
+    border: 3px solid #d946a0;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .pill-button .checkmark {
+        width: 20px;
+        height: 24px;
+        color: #d946a0;
+    }
+
+    .pill-button .label {
+        font-size: 14px;
+        font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        color: #1a1a1a;
+        letter-spacing: 0.5px;
+    }

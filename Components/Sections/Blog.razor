@@ -1,0 +1,37 @@
+﻿@using AbbiePortfolio.Components.ComponentLibrary
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mb-16" id="blog" Style="scroll-margin-top: 70px;">
+    <MudText Typo="Typo.h4" Class="mb-8 d-flex justify-center" Style="font-weight: 700;">
+       Blog
+    </MudText>
+    <MudGrid Spacing="4">
+        @if (Blogs != null && Blogs.Count > 0)
+        {
+            <BlogCard BlogPost="Blogs[0]" CategoryColor="@Colors.Pink.Lighten4"/>
+            <BlogCard BlogPost="Blogs[1]" CategoryColor="@Colors.Blue.Lighten4"/>
+        }
+        else
+        {
+            <MudCard>
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="200px" />
+                <MudCardContent>
+                    <MudSkeleton Width="30%" Height="20px;" />
+                    <MudSkeleton Width="40%" Height="42px;" />
+                    <MudSkeleton Width="80%" />
+                    <MudSkeleton Width="100%" />
+                    <MudSkeleton Width="100%" />
+                </MudCardContent>
+            </MudCard>
+
+            <MudCard>
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="200px" />
+                <MudCardContent>
+                    <MudSkeleton Width="30%" Height="20px;" />
+                    <MudSkeleton Width="40%" Height="42px;" />
+                    <MudSkeleton Width="80%" />
+                    <MudSkeleton Width="100%" />
+                    <MudSkeleton Width="100%" />
+                </MudCardContent>
+            </MudCard>
+        }
+    </MudGrid>
+</MudContainer>

@@ -1,0 +1,23 @@
+﻿<div class="contact-card-container" id="contact-card-container">
+    <div class="contact-grid-background">
+        <div class="resize-handle handle-top-left"></div>
+        <div class="resize-handle handle-top-right"></div>
+        <div class="resize-handle handle-bottom-left"></div>
+        <div class="resize-handle handle-bottom-right"></div>
+    </div>
+    <div class="contact-card">
+        <ContactForm />
+    </div>
+</div>
+
+@code {
+    [Inject] private IJSRuntime JS { get; set; } = default!;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("observeElementOnce", "contact-card-container", "animate-in");
+        }
+    }
+}

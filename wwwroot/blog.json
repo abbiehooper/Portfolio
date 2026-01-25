@@ -2,46 +2,16 @@
   {
     "Title": "Building a Real-Time Task Priority System: A Journey Through Stacks, Queues, and Priority Queues",
     "Description": "I created a real-time task priority system to learn when best to use stacks, queues and priority queues",
-    "Category": "Fundamentals",
-    "SubCategory": "Data Structures & Algorithms",
     "PostUrl": "https://medium.com/@abigailunwin/building-a-real-time-task-priority-application-a-journey-through-stacks-queues-and-priority-312e4a436938",
-    "ImageUrl": "/images/BlogCard/TaskPrioritySystem.jpeg",
-    "PublishedDate": "28/10/2025"
+    "ImageUrl": "/images/BlogCard/TaskPrioritySystem.png",
+    "Category": "Data Structures"
+    
   },
   {
     "Title": "From Code to Cloud: Building Your First CI/CD Pipeline with Health Checks and Monitoring",
     "Description": "I created a simple app to test out CI/CD concepts, build pipelines, docker containerization, deployment strategies, health checks, application logging and observability.",
-    "Category": "Architecture",
-    "SubCategory": "DevOps & Infrastructure",
     "PostUrl": "https://medium.com/@abigailunwin/from-code-to-cloud-building-my-first-ci-cd-pipeline-with-health-checks-and-monitoring-b3b4e3f1d152",
-    "ImageUrl": "/images/BlogCard/CodeToCloud.jpeg",
-    "PublishedDate": "18/11/2025"
-  },
-  {
-    "Title": "Why Is My App Slow? A Detective Story",
-    "Description": "This post explores profiling and benchmarking, database query optimization, lazy loading vs eager loading, caching strategies and async patterns.",
-    "Category": "Quality Assurance",
-    "SubCategory": "Performance & Optimization",
-    "PostUrl": "/",
-    "ImageUrl": "/images/BlogCard/DetectiveStory.jpeg",
-    "PublishedDate": "28/10/2025"
-  },
-  {
-    "Title": "The Art of the Code Review",
-    "Description": "This post covers code reviews, giving and recieving feedback, asking effective questions, documentation and technical writing",
-    "Category": "Tools & Skills",
-    "SubCategory": "Soft Skills",
-    "PostUrl": "/",
-    "ImageUrl": "/images/BlogCard/CodeReview.jpeg",
-    "PublishedDate": "28/10/2025"
-  },
-  {
-    "Title": "Designing Forms for Everyone",
-    "Description": "This post covers accessibility, form design best practices, user feedback and validation, loading states and error handling, visual hierarchy, colour theory and contrast and usability testing.",
-    "Category": "Design",
-    "SubCategory": "UX & UI Principles",
-    "PostUrl": "/",
-    "ImageUrl": "/images/BlogCard/DesigningFormsForEveryone.jpeg",
-    "PublishedDate": "28/10/2025"
+    "ImageUrl": "/images/BlogCard/CodeToCloud.png",
+    "Category": "DevOps & Infrastructure"
   }
 ]

@@ -1,0 +1,91 @@
+﻿.contact-card-container {
+    position: relative;
+    width: 100%;
+    padding: 15px 0px;
+    margin: 0 auto;
+}
+
+.contact-grid-background {
+    position: absolute;
+    inset: 0;
+    background-color: #f0d4e8;
+    background-image: linear-gradient(to right, #0828F7 1px, transparent 1px), linear-gradient(to bottom, #0828F7 1px, transparent 1px);
+    background-size: 18px 18px;
+    z-index: 0;
+    /* Start collapsed, wait for animation trigger */
+    transform-origin: top left;
+    transform: scale(0);
+}
+
+/* Figma-style resize handles */
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #9a7bb5;
+    z-index: 1;
+}
+
+.handle-top-left {
+    top: -5px;
+    left: -5px;
+}
+
+.handle-top-right {
+    top: -5px;
+    right: -5px;
+}
+
+.handle-bottom-left {
+    bottom: -5px;
+    left: -5px;
+}
+
+.handle-bottom-right {
+    bottom: -5px;
+    right: -5px;
+}
+
+.contact-card {
+    position: relative;
+    z-index: 1;
+    background-color: var(--mud-palette-surface);
+    margin: 30px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    /* Start invisible, wait for animation trigger */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animations trigger when .animate-in is added */
+.contact-card-container.animate-in .contact-grid-background {
+    animation: expand-grid 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.contact-card-container.animate-in .contact-card {
+    animation: fade-in-up 0.6s ease-out 0.5s forwards;
+}
+
+@keyframes expand-grid {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

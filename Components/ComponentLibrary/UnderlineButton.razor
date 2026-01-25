@@ -1,0 +1,33 @@
+﻿<div class="@ContainerClass">
+    @if (!string.IsNullOrEmpty(Href))
+    {
+        <a href="@Href" target="_blank" class="underline-button @Class">
+            <span class="underline-button-text">@Text</span>
+        </a>
+    }
+    else
+    {
+        <button type="button" class="underline-button @Class" onclick="@OnClick">
+            <span class="underline-button-text">@Text</span>
+        </button>
+    }
+</div>
+
+
+
+@code {
+    [Parameter]
+    public required string Text { get; set; } 
+
+    [Parameter]
+    public EventCallback<EventArgs> OnClick { get; set; } 
+
+    [Parameter]
+    public string? Href { get; set; } 
+
+    [Parameter]
+    public string? Class { get; set; }
+
+    [Parameter]
+    public string? ContainerClass { get; set; }
+}

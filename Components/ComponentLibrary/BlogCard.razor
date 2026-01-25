@@ -1,29 +1,23 @@
-﻿<MudCard Elevation="2" Class="blog-post-card" Style="height: 100%; display: flex; flex-direction: column;">
-    <MudCardMedia Image="@BlogPost.ImageUrl" Height="300" Class="card-image" />
-    <MudCardContent Class="card-content" Style="flex-grow: 1; display: flex; flex-direction: column;">
-        <div class="card-header d-flex w-100 justify-space-between">
-            <MudText Typo="Typo.caption" Color="Color.Secondary" Style="font-weight: 800;">@BlogPost.Category</MudText>
-            <MudText Typo="Typo.caption" Color="Color.Secondary" Style="font-weight: 800;">@BlogPost.SubCategory</MudText>
+﻿<MudItem xs="12" sm="6" md="6">
+    <MudCard Elevation="2" Style="height: 100%;">
+        <MudCardMedia Image="@BlogPost.ImageUrl" Height="200" />
+        <div class="category" style="background-color: @CategoryColor;">
+            @BlogPost.Category
         </div>
-        <div class="card-date">
-            <MudText Typo="Typo.caption" Color="Color.Secondary">@BlogPost.PublishedDate</MudText>
-        </div>
-        <MudText Typo="Typo.h6" Class="card-title mb-2">@BlogPost.Title</MudText>
-        <MudText Typo="Typo.body2" Class="card-description mb-0" Style="flex-grow: 1;">
-            @BlogPost.Description
-        </MudText>
-    </MudCardContent>
-    <MudCardActions Class="card-actions justify-end" Style="margin-top: -16px;">
-        <MudLink Href="@BlogPost.PostUrl" Typo="Typo.body2" Class="read-more-link d-flex align-items-centre ">
-            Read post
-            <MudIcon Icon="@Icons.Material.Filled.ArrowForward" Size="Size.Small" Class="ml-1" />
-        </MudLink>
-    </MudCardActions>
-</MudCard>
+        <MudCardContent>
+            <MudText Typo="Typo.h5" Class="mb-2" Style="font-weight: 600;">@BlogPost.Title</MudText>
+            <MudText Typo="Typo.body2" Class="mb-1">@BlogPost.Description</MudText>
+        </MudCardContent>
+        <UnderlineButton Href="@BlogPost.PostUrl" ContainerClass="d-flex justify-end mx-4 my-4" Text="Read Post →" />
+    </MudCard>
+</MudItem>
 
 @code {
 
     [Parameter]
     public required BlogPost BlogPost { get; set; }
+
+    [Parameter]
+    public string? CategoryColor { get; set; }
 
 }
