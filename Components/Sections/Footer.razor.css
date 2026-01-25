@@ -1,18 +1,20 @@
 ﻿.name {
-    flex: 1;
     display: flex;
     justify-content: flex-start;
 }
 
 .content {
     display: flex;
-    justify-content: flex-end;
-    flex: 1;
+    align-items: flex-end;
     flex-direction: column;
+    color: white;
 }
 
 footer {
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
 }
 
 @media (max-width: 600px) {
