@@ -8,7 +8,7 @@
 
 <MudLayout>
     <Header IsDarkMode="_isDarkMode" IsDarkModeChanged="@((value) => _isDarkMode = value)" />
-    <MudMainContent Class="pt-16 pa-4">
+    <MudMainContent Class="pt-16 pb-16 pa-4">
         @Body
     </MudMainContent>
     <Footer />
@@ -50,7 +50,7 @@
         GrayLight = "#e8e8e8",
         GrayLighter = "#f9f9f9",
         OverlayLight = "#ffd1b6",
-        Background = "rgb(244,244,234)",
+        Background = "#FDFDF4",
     };
 
     private readonly PaletteDark _darkPalette = new()

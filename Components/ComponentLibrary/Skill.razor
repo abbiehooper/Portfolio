@@ -1,0 +1,16 @@
+﻿<div class="skill">
+   <div class="skill-name">
+        @Name
+   </div> 
+
+    <img src="@Icon" alt="@Name" class="skill-icon" />
+</div>
+
+@code {
+
+    [Parameter]
+    public required string Name { get; set; }
+
+    [Parameter]
+    public required string Icon { get; set; }
+}

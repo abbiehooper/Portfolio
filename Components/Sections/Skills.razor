@@ -1,0 +1,21 @@
+﻿@using AbbiePortfolio.Components.ComponentLibrary
+
+<MudContainer MaxWidth="MaxWidth.Medium">
+    <div class="skills">
+        <Skill Name="C#" Icon="@_c" />
+        <Skill Name="ASP.NET Core" Icon="@_aspDotNet" />
+        <Skill Name="Blazor" Icon="@_blazor" />
+        <Skill Name="Azure" Icon="@_azure" />
+        <Skill Name="UI/UX Design" Icon="@_ui" />
+    </div>
+</MudContainer>
+
+
+
+@code {
+    private readonly string _c = "images/Icons/Inchworm.svg";
+    private readonly string _aspDotNet = "images/Icons/Diamond.svg";
+    private readonly string _blazor= "images/Icons/Blazor.svg";
+    private readonly string _azure= "images/Icons/Microsoft.svg";
+    private readonly string _ui= "images/Icons/Play.svg";
+}

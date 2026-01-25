@@ -1,0 +1,16 @@
+﻿.skill {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-name {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.skill-icon {
+    height: 48px;
+    width: 48px;
+}
