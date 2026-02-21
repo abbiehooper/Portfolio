@@ -1,4 +1,6 @@
 ﻿@using AbbiePortfolio.Components.ComponentLibrary
+@inject IJSRuntime JS
+
 <section class="hero-section">
     <MudContainer MaxWidth="MaxWidth.Large">
         <MudGrid Justify="Justify.Center" Spacing="6">
@@ -37,10 +39,19 @@
                         web applications that deliver great user experiences.
                     </MudText>
                     <div class="fade-in-item fade-in-3">
-                        <UnderlineButton Text="Download my CV →" />
+                        <UnderlineButton OnClick=DownloadCV Text="Download my CV →" />
                     </div>
                 </div>
             </MudItem>
         </MudGrid>
     </MudContainer>
 </section>
+
+@code {
+
+    private async Task DownloadCV()
+    {
+        await JS.InvokeVoidAsync("downloadFile", "/files/Abigail_Hooper_CV.docx", "Abigail_Hooper_CV.docx");
+    }
+    
+}
