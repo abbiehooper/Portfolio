@@ -1,4 +1,5 @@
-﻿using brevo_csharp.Api;
+﻿using AbbiePortfolio.Startup;
+using brevo_csharp.Api;
 using brevo_csharp.Model;
 using Configuration = brevo_csharp.Client.Configuration;
 
@@ -13,15 +14,10 @@ public class BrevoEmailService : IEmailService
     public BrevoEmailService(IConfiguration configuration, ILogger<BrevoEmailService> logger)
     {
         _logger = logger;
-
-        _senderEmail = configuration["Brevo:SenderEmail"]
-            ?? throw new InvalidOperationException("Brevo sender email is not configured.");
-        _recipientEmail = configuration["Brevo:RecipientEmail"]
-            ?? throw new InvalidOperationException("Brevo recipient email is not configured.");
-
-        var apiKey = configuration["Brevo:ApiKey"]
-            ?? throw new InvalidOperationException("Brevo API key is not configured.");
-
+        var options = configuration.GetSection("Brevo").Get<BrevoOptions>() ?? throw new InvalidOperationException("Brevo configuration section is missing or invalid.");
+        _senderEmail = options.SenderEmail ?? throw new InvalidOperationException("Brevo sender email is not configured.");
+        _recipientEmail = options.RecipientEmail ?? throw new InvalidOperationException("Brevo recipient email is not configured.");
+        var apiKey = options.ApiKey ?? throw new InvalidOperationException("Brevo API key is not configured.");
         Configuration.Default.ApiKey["api-key"] = apiKey;
     }
 
