@@ -1,9 +1,12 @@
 using AbbiePortfolio.Components;
+using AbbiePortfolio.Services;
 using MudBlazor;
 using MudBlazor.Services;
 using static AbbiePortfolio.Startup.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IEmailService, BrevoEmailService>();
 
 builder.Services.SetupDI()
     .AddMudServices(config =>
