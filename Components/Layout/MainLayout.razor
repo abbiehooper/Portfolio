@@ -6,7 +6,7 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
+<MudLayout Style="@GetCssVariables()">
     <Header IsDarkMode="_isDarkMode" IsDarkModeChanged="@((value) => _isDarkMode = value)" />
     <MudMainContent Class="pt-16 pb-16 pa-4">
         @Body
@@ -37,6 +37,10 @@
         };
     }
 
+    private string GetCssVariables()
+    => $"--hover-color: {(_isDarkMode ? _darkPalette.OverlayDark : _lightPalette.OverlayLight)}";
+
+
     private readonly PaletteLight _lightPalette = new()
     {
         Primary = "#f04a28",
@@ -49,7 +53,7 @@
         DrawerBackground = "#ffffff",
         GrayLight = "#e8e8e8",
         GrayLighter = "#f9f9f9",
-        OverlayLight = "#ffd1b6",
+        OverlayLight = "#FFCCBC",
         Background = "#FDFDF4",
     };
 
@@ -62,12 +66,12 @@
         Background = "#1a1a27",
         BackgroundGray = "#151521",
         AppbarText = "#92929f",
-        AppbarBackground = "rgba(26,26,39,0.8)",
+        AppbarBackground = "rgba(19,19,27,1)",
         DrawerBackground = "#1a1a27",
         ActionDefault = "#74718e",
         ActionDisabled = "#9999994d",
         ActionDisabledBackground = "#605f6d4d",
-        TextPrimary = "#fff",
+        TextPrimary = "#D9D9D9",
         TextSecondary = "#b2b0bf",
         TextDisabled = "#ffffff33",
         DrawerIcon = "#92929f",
@@ -81,7 +85,7 @@
         LinesDefault = "#33323e",
         TableLines = "#33323e",
         Divider = "#292838",
-        OverlayLight = "#ffd1b6",
+        OverlayDark = "#561500",
     };
 
     private static readonly string[] headingFontArray = new[] { "Crimson Pro", "Helvetica", "Arial", "sans-serif" };

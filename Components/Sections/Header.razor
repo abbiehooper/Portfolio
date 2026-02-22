@@ -6,14 +6,14 @@
     </div>
 
     <div class="nav-links">
-        <NavigateToSectionLink SectionId="projects" Title="Projects" HoverColour="@Colors.Pink.Lighten4" />
-        <NavigateToSectionLink SectionId="blog" Title="Blog" HoverColour="@Colors.Blue.Lighten4" />
-        <NavigateToSectionLink SectionId="contact" Title="Contact" HoverColour="@Colors.Green.Lighten4" />
+        <NavigateToSectionLink SectionId="projects" Title="Projects" HoverColour=@HoverPink />
+        <NavigateToSectionLink SectionId="blog" Title="Blog" HoverColour=@HoverBlue />
+        <NavigateToSectionLink SectionId="contact" Title="Contact" HoverColour=@HoverGreen />
     </div>
 
     <div class="theme">
         <MudIconButton Icon="@(IsDarkMode? Icons.Material.Outlined.LightMode : Icons.Material.Outlined.DarkMode)"
-                       Style="@($"color: #000; background:{Colors.DeepOrange.Lighten4};")"
+                       Style="@($"color: {IconText}; background:{IconColour};")"
                        OnClick="@DarkModeToggle" />
     </div>
 </MudAppBar>
@@ -30,4 +30,10 @@
         IsDarkMode = !IsDarkMode;
         IsDarkModeChanged.InvokeAsync(IsDarkMode);
     }
+
+    private string IconColour => IsDarkMode ? Colors.Gray.Darken4 : Colors.DeepOrange.Lighten4;
+    private string IconText => IsDarkMode ? Colors.DeepOrange.Default : Colors.Shades.Black;
+    private string HoverPink => IsDarkMode ? Colors.Pink.Darken2 : Colors.Pink.Lighten4;
+    private string HoverBlue => IsDarkMode ? Colors.Blue.Darken2 : Colors.Blue.Lighten4;
+    private string HoverGreen => IsDarkMode ? Colors.Green.Darken2 : Colors.Green.Lighten4;
 }

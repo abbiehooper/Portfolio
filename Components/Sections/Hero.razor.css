@@ -228,7 +228,6 @@
     position: relative;
     white-space: nowrap;
     margin-bottom: -0.7rem;
-    color: black;
 }
 
     .highlight::before {
