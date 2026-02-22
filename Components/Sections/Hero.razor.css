@@ -216,7 +216,7 @@
 
 /* Main Title */
 .hero-title {
-    font-size: 3rem;
+    font-size: inherit;
     font-weight: 700;
     line-height: 1.15;
     margin: 0 0 1.5rem 0;
@@ -306,7 +306,7 @@
 /* Responsive Adjustments */
 @media (max-width: 960px) {
     .hero-section {
-        padding: 1rem 0;
+        padding: 3rem 0;
         min-height: auto;
     }
 
@@ -329,6 +329,10 @@
     .hero-image-container {
         margin-bottom: 2rem;
     }
+
+    .highlight {
+        margin-bottom: -0.5rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -342,12 +346,15 @@
     }
 
     .grid-background {
-        width: 190px;
-        height: 210px;
+        left: -50px;
+        width: 307px;
     }
 
     .hero-image {
-        width: 190px;
-        height: 240px;
+        right: -50px;
+    }
+
+    .highlight {
+        margin-bottom: -0.5rem;
     }
 }

@@ -1,7 +1,8 @@
 ﻿<MudButton Variant="Variant.Filled"
            Color="Color.Primary"
-           Disabled="@(!CanSubmit || Loading)"
-           OnClick="@OnClick">
+           Disabled="@(!Enabled || Loading)"
+           OnClick="@OnClick"
+           ButtonType="@Type">
     @if (Loading)
     {
         <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
@@ -18,7 +19,7 @@
     public EventCallback OnClick { get; set; }
 
     [Parameter]
-    public bool CanSubmit { get; set; } = false;
+    public bool Enabled { get; set; } = false;
 
     [Parameter]
     public bool Loading { get; set; } = false;
@@ -28,4 +29,7 @@
 
     [Parameter]
     public string? ButtonText { get; set; }
+
+    [Parameter]
+    public ButtonType Type { get; set; }
 }

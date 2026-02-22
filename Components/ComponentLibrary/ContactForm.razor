@@ -1,33 +1,35 @@
-﻿<MudForm @ref="form" @bind-IsValid="@success" ValidationDelay="0">
+﻿<MudForm Spacing="3" @ref="form" @bind-IsValid="@success" ValidationDelay="0">
     <MudTextField T="string"
-                  Label="Name"
+                  Label="Name*"
                   @bind-Value="contactModel.Name"
                   For="@(() => contactModel.Name)"
                   Immediate="true"
                   Variant="Variant.Outlined"
-                  Style="font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;"
-                  Class="mb-4" />
+                  Style="font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;" 
+                  OnlyValidateIfDirty="true" />
     <MudTextField T="string"
-                  Label="Email Address"
+                  Label="Email Address*"
                   @bind-Value="contactModel.Email"
                   For="@(() => contactModel.Email)"
                   Immediate="true"
                   Variant="Variant.Outlined"
-                  Style="font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;"
-                  Class="mb-4" />
+                  Style="font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;" 
+                  OnlyValidateIfDirty="true" />
     <MudTextField T="string"
-                  Label="Message"
+                  Label="Message*"
                   Lines="5"
                   @bind-Value="contactModel.Message"
                   For="@(() => contactModel.Message)"
                   Style="font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;"
                   Immediate="true"
-                  Variant="Variant.Outlined"
-                  Class="mb-4" />
-    <div class="d-flex justify-end">
-        <Button ButtonText="Send Message →"
+                  Variant="Variant.Outlined" 
+                  OnlyValidateIfDirty="true" />
+    <div class="d-flex justify-space-between">
+        <MudText Typo="Typo.body2" Class="mr-2">* Required fields</MudText>
+        <Button ButtonText="Send →"
                 OnClick="SendEmail" 
-                CanSubmit="CanSubmit" 
+                Type="ButtonType.Submit"
+                Enabled="CanSubmit" 
                 LoadingText="Sending..."
                 Loading="sending" />
     </div>

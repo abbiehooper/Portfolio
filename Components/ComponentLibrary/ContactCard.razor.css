@@ -89,3 +89,10 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 600px) {
+    .contact-card {
+        margin: 0px 15px;
+        padding: 20px;
+    }
+}
