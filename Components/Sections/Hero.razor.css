@@ -13,6 +13,10 @@
 }
 
 /* Heading block */
+h1 {
+    outline: none;
+}
+
 .hero-heading {
     display: flex;
     flex-direction: column;
@@ -27,15 +31,15 @@
     line-height: 1.2;
 }
 
-.hero-name {
+.hero-text {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(4rem, 11vw, 9.5rem);
     font-weight: 400;
-    font-style: italic;
     line-height: 0.88;
     color: var(--mud-palette-text-primary);
     margin: 0;
 }
+
 
 /* Footer bar — three columns: role · bio · cta */
 .hero-footer {
