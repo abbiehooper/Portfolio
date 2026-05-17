@@ -1,23 +1,20 @@
-﻿<MudItem xs="12" sm="6" md="6">
-    <MudCard Elevation="1" Style="height: 100%;">
-        <MudCardMedia Image="@BlogPost.ImageUrl" Height="200" />
-        <div class="category" style="background-color: @CategoryColor;">
-            @BlogPost.Category
+<MudItem xs="12" sm="6" md="6">
+    <div class="blog-card">
+        <div class="blog-image-wrap">
+            <img src="@BlogPost.ImageUrl" alt="@BlogPost.Title" class="blog-image" />
         </div>
-        <MudCardContent>
-            <MudText Typo="Typo.h5" Class="mb-2" Style="font-weight: 600;">@BlogPost.Title</MudText>
-            <MudText Typo="Typo.body2" Class="mb-1">@BlogPost.Description</MudText>
-        </MudCardContent>
-        <UnderlineButton Href="@BlogPost.PostUrl" ContainerClass="d-flex justify-end mx-4 my-4" Text="Read Post →" />
-    </MudCard>
+        <div class="blog-body">
+            <span class="blog-category">@BlogPost.Category</span>
+            <MudText Typo="Typo.h5" Class="blog-title">@BlogPost.Title</MudText>
+            <MudText Typo="Typo.body2" Class="blog-description">@BlogPost.Description</MudText>
+            <UnderlineButton Href="@BlogPost.PostUrl" ContainerClass="mt-auto pt-4" Text="Read Post →" />
+        </div>
+    </div>
 </MudItem>
 
 @code {
 
     [Parameter]
     public required BlogPost BlogPost { get; set; }
-
-    [Parameter]
-    public string? CategoryColor { get; set; }
 
 }

@@ -1,5 +1,66 @@
-﻿.links-container {
-    display: flex !important;
-    margin-left: -0.9rem;
-    margin-top: -1rem;
+.project-card {
+    border: 1px solid var(--mud-palette-divider);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--mud-palette-text-secondary);
+}
+
+.project-image-wrap {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    filter: grayscale(10%);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.03);
+}
+
+.project-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-link {
+    color: var(--mud-palette-text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: var(--mud-palette-text-primary);
+}
+
+.project-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.project-description {
+    color: var(--mud-palette-text-secondary);
+    line-height: 1.6;
 }

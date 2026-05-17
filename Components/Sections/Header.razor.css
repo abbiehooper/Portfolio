@@ -1,4 +1,4 @@
-﻿.name {
+.name {
     flex: 1;
     display: flex;
     justify-content: flex-start;
@@ -6,7 +6,7 @@
 
 .nav-links {
     display: flex;
-    gap: 24px;
+    gap: 8px;
 }
 
 .theme {

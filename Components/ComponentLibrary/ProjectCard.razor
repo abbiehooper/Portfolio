@@ -1,16 +1,22 @@
-﻿<MudItem xs="12" sm="6" md="6">
-    <MudCard Elevation="1" Style="height: 100%;">
-        <MudCardMedia Image="@ImageUrl" Height="200" />
-        <MudCardContent>
-            <div class="links-container">
+<MudItem xs="12" sm="6" md="6">
+    <div class="project-card">
+        <div class="project-image-wrap">
+            <img src="@ImageUrl" alt="@Title" class="project-image" />
+        </div>
+        <div class="project-body">
+            <div class="project-links">
                 @if (!string.IsNullOrWhiteSpace(PreviewUrl))
                 {
-                    <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Color="Color.Primary" aria-label="open in new window" Target="_blank" Href="@PreviewUrl" />
+                    <a href="@PreviewUrl" target="_blank" class="project-link" aria-label="Open preview">
+                        <MudIcon Icon="@Icons.Material.Outlined.OpenInNew" Size="Size.Small" />
+                    </a>
                 }
-                <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Primary" aria-label="github" Target="_blank" Href="@GithubUrl" />
+                <a href="@GithubUrl" target="_blank" class="project-link" aria-label="GitHub">
+                    <MudIcon Icon="@Icons.Custom.Brands.GitHub" Size="Size.Small" />
+                </a>
             </div>
-            <MudText Typo="Typo.h5" Class="mb-2" Style="font-weight: 600;">@Title</MudText>
-            <MudText Typo="Typo.body2" Class="mb-1">@Description</MudText>
-        </MudCardContent>
-    </MudCard>
+            <MudText Typo="Typo.h5" Class="project-title">@Title</MudText>
+            <MudText Typo="Typo.body2" Class="project-description">@Description</MudText>
+        </div>
+    </div>
 </MudItem>

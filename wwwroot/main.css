@@ -1,32 +1,65 @@
-﻿:root {
-    --hover-color: #FFCCBC;
-    --mud-typography-h3-lineheight: 0.5;
+:root {
+    --color-bg: #F7F5F0;
+    --color-text: #1A1A1A;
+    --color-accent: #8A7E6D;
+    --color-border: #D4CFC7;
+    --color-surface: #FFFFFF;
+    --hover-color: #D4CFC7;
+    --mud-typography-h3-lineheight: 1.1;
 }
 
+/* Editorial section label */
+.section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mud-palette-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Thin horizontal rule */
+.section-rule {
+    border: none;
+    border-top: 1px solid var(--mud-palette-divider);
+    margin: 0 0 2rem 0;
+}
+
+/* Section wrapper */
+.editorial-section {
+    padding: 5rem 0;
+}
+
+/* MudBlazor input label font */
 .mud-input-label {
-    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 
+/* Nav section links — clean, no coloured fill */
 .section-link {
     position: relative;
     overflow: hidden;
     border-radius: 0;
-    font-weight: 600;
+    font-weight: 400;
     padding: 2px 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
-    .section-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: var(--hover-color);
-        transition: width 0.3s ease-out;
-        z-index: -1;
-    }
+.section-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    height: 1px;
+    background-color: var(--mud-palette-text-primary);
+    transform: scaleX(0);
+    transition: transform 0.25s ease-out;
+}
 
-    .section-link:hover::before {
-        width: 100%;
-    }
+.section-link:hover::after {
+    transform: scaleX(1);
+}
