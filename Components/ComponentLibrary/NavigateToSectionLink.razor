@@ -4,7 +4,7 @@
     OnClick="@(() => NavigateToSection(SectionId))"
     Class="section-link"
     Style="@($"--hover-color: {HoverColour}")">
-    <MudText>@Title</MudText>
+    <MudText Class="section-link">@Title</MudText>
 </MudButton>
 
 @code {

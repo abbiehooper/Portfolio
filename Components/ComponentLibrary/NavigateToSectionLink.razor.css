@@ -1,12 +1,13 @@
 .section-link {
     position: relative;
     border-radius: 0 !important;
-    font-family: 'Roboto Mono', monospace !important;
     font-size: 0.7rem !important;
     font-weight: 400 !important;
     letter-spacing: 0.12em !important;
     text-transform: uppercase !important;
     padding: 2px 8px !important;
+    font-family: 'Roboto Mono', monospace !important;
+    color: var(--mud-palette-text-secondary);
 }
 
 .section-link::after {

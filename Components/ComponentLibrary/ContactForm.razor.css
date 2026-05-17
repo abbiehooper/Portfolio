@@ -1,5 +1,5 @@
-.contact-card-wrapper {
-    max-width: 640px;
+﻿.contact-form-wrapper {
+    width: 100%;
     border: 1px solid var(--mud-palette-divider);
     padding: 2.5rem;
 }

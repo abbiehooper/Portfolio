@@ -60,7 +60,8 @@
     font-style: italic;
 }
 
-.project-description {
+::deep .project-description {
     color: var(--mud-palette-text-secondary);
     line-height: 1.6;
+    font-size: 1rem;
 }

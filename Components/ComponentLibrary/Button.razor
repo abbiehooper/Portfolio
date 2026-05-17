@@ -2,7 +2,8 @@
            Color="Color.Primary"
            Disabled="@(!Enabled || Loading)"
            OnClick="@OnClick"
-           ButtonType="@Type">
+           ButtonType="@Type"
+           Style="border-radius: 0px">
     @if (Loading)
     {
         <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />

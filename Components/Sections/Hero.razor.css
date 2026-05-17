@@ -121,16 +121,21 @@
     font-weight: 400;
     line-height: 1.05;
     color: var(--mud-palette-text-primary);
+    outline: none;
+}
+
+.outline-none {
+    outline: none;
 }
 
 .hero-title em {
     font-style: italic;
 }
 
-.hero-description {
+::deep .hero-description {
     color: var(--mud-palette-text-secondary);
-    line-height: 1.7;
-    max-width: 42ch;
+    max-width: 48ch;
+    margin: 0;
 }
 
 /* Staggered fade-in for content items */

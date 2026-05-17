@@ -1,0 +1,16 @@
+﻿.contact-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.email {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.hours {
+    font-size: 0.9rem;
+}
