@@ -1,8 +1,38 @@
-.skills {
-    display: flex;
-    gap: 0;
-    align-items: stretch;
-    flex-wrap: wrap;
+.marquee-section {
     border-top: 1px solid var(--mud-palette-divider);
-    border-left: 1px solid var(--mud-palette-divider);
+    border-bottom: 1px solid var(--mud-palette-divider);
+    overflow: hidden;
+    padding: 0.875rem 0;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-section:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--mud-palette-text-primary);
+    padding: 0 1.75rem;
+}
+
+.marquee-sep {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--mud-palette-text-secondary);
+    flex-shrink: 0;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
