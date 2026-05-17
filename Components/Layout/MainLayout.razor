@@ -8,7 +8,7 @@
 
 <MudLayout Style="@GetCssVariables()">
     <Header IsDarkMode="_isDarkMode" IsDarkModeChanged="@((value) => _isDarkMode = value)" />
-    <MudMainContent Class="pt-16 pb-16 pa-4">
+    <MudMainContent Class="pt-14">
         @Body
     </MudMainContent>
     <Footer />
@@ -38,57 +38,61 @@
     }
 
     private string GetCssVariables()
-    => $"--hover-color: {(_isDarkMode ? _darkPalette.OverlayDark : _lightPalette.OverlayLight)}";
+    => $"--hover-color: {(_isDarkMode ? "#3A3A35" : "#D4CFC7")}";
 
 
     private readonly PaletteLight _lightPalette = new()
     {
-        Primary = "#f04a28",
-        Secondary = "#7f1a01",
-        TextPrimary = "#000",
+        Primary = "#1A1A1A",
+        Secondary = "#8A7E6D",
+        TextPrimary = "#1A1A1A",
+        TextSecondary = "#8A7E6D",
 
-        Black = "#110e2d",
-        AppbarText = "#424242",
-        AppbarBackground = "rgba(255,255,255,0.8)",
-        DrawerBackground = "#ffffff",
-        GrayLight = "#e8e8e8",
-        GrayLighter = "#f9f9f9",
-        OverlayLight = "#FFCCBC",
-        Background = "#FDFDF4",
+        Black = "#1A1A1A",
+        AppbarText = "#1A1A1A",
+        AppbarBackground = "rgba(247, 245, 240, 0.95)",
+        DrawerBackground = "#F7F5F0",
+        Surface = "#FFFFFF",
+        GrayLight = "#E8E4DC",
+        GrayLighter = "#F2EFE9",
+        OverlayLight = "#D4CFC7",
+        Background = "#F7F5F0",
+        Divider = "#D4CFC7",
+        LinesDefault = "#D4CFC7",
     };
 
     private readonly PaletteDark _darkPalette = new()
     {
-        Primary = "#f04a28",
-        Secondary = "#7f1a01",
+        Primary = "#E8E4DC",
+        Secondary = "#8A7E6D",
 
-        Surface = "#1e1e2d",
-        Background = "#1a1a27",
-        BackgroundGray = "#151521",
-        AppbarText = "#92929f",
-        AppbarBackground = "rgba(19,19,27,1)",
-        DrawerBackground = "#1a1a27",
-        ActionDefault = "#74718e",
-        ActionDisabled = "#9999994d",
-        ActionDisabledBackground = "#605f6d4d",
-        TextPrimary = "#D9D9D9",
-        TextSecondary = "#b2b0bf",
+        Surface = "#252520",
+        Background = "#1A1A1A",
+        BackgroundGray = "#111110",
+        AppbarText = "#E8E4DC",
+        AppbarBackground = "rgba(26, 26, 26, 0.95)",
+        DrawerBackground = "#1A1A1A",
+        ActionDefault = "#8A7E6D",
+        ActionDisabled = "#8A7E6D4d",
+        ActionDisabledBackground = "#3a3a354d",
+        TextPrimary = "#E8E4DC",
+        TextSecondary = "#8A7E6D",
         TextDisabled = "#ffffff33",
-        DrawerIcon = "#92929f",
-        DrawerText = "#92929f",
-        GrayLight = "#2a2833",
-        GrayLighter = "#1e1e2d",
-        Info = "#4a86ff",
-        Success = "#3dcb6c",
-        Warning = "#ffb545",
-        Error = "#ff3f5f",
-        LinesDefault = "#33323e",
-        TableLines = "#33323e",
-        Divider = "#292838",
-        OverlayDark = "#561500",
+        DrawerIcon = "#8A7E6D",
+        DrawerText = "#8A7E6D",
+        GrayLight = "#2A2A25",
+        GrayLighter = "#252520",
+        Info = "#8A7E6D",
+        Success = "#6B8F6B",
+        Warning = "#C4A86B",
+        Error = "#C47B6B",
+        LinesDefault = "#3A3A35",
+        TableLines = "#3A3A35",
+        Divider = "#3A3A35",
+        OverlayDark = "#2A2A25",
     };
 
-    private static readonly string[] headingFontArray = new[] { "Crimson Pro", "Helvetica", "Arial", "sans-serif" };
+    private static readonly string[] headingFontArray = new[] { "Playfair Display", "Georgia", "serif" };
 
     private readonly Typography _typography = new Typography()
     {

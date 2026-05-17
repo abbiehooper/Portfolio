@@ -1,7 +1,8 @@
-﻿.skills {
+.skills {
     display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
+    gap: 0;
+    align-items: stretch;
     flex-wrap: wrap;
+    border-top: 1px solid var(--mud-palette-divider);
+    border-left: 1px solid var(--mud-palette-divider);
 }

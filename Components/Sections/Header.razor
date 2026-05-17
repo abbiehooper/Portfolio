@@ -1,19 +1,20 @@
-﻿@using AbbiePortfolio.Components.ComponentLibrary
+@using AbbiePortfolio.Components.ComponentLibrary
 @using AbbiePortfolio.Components.Pages
-<MudAppBar Elevation="1" Fixed="true">
+<MudAppBar Elevation="0" Fixed="true" Dense="true">
     <div class="name">
-        <MudText Typo="Typo.h4" Color="Color.Primary" Style="font-weight:bold;">Abbie Hooper</MudText>
+        <MudText Typo="Typo.h6" Style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: 0.01em;">Abbie Hooper</MudText>
     </div>
 
     <div class="nav-links">
-        <NavigateToSectionLink SectionId="projects" Title="Projects" HoverColour=@HoverPink />
-        <NavigateToSectionLink SectionId="blog" Title="Blog" HoverColour=@HoverBlue />
-        <NavigateToSectionLink SectionId="contact" Title="Contact" HoverColour=@HoverGreen />
+        <NavigateToSectionLink SectionId="projects" Title="Projects" HoverColour="transparent" />
+        <NavigateToSectionLink SectionId="blog" Title="Blog" HoverColour="transparent" />
+        <NavigateToSectionLink SectionId="contact" Title="Contact" HoverColour="transparent" />
     </div>
 
     <div class="theme">
         <MudIconButton Icon="@(IsDarkMode? Icons.Material.Outlined.LightMode : Icons.Material.Outlined.DarkMode)"
-                       Style="@($"color: {IconText}; background:{IconColour};")"
+                       Color="Color.Inherit"
+                       Size="Size.Small"
                        OnClick="@DarkModeToggle" />
     </div>
 </MudAppBar>
@@ -30,10 +31,4 @@
         IsDarkMode = !IsDarkMode;
         IsDarkModeChanged.InvokeAsync(IsDarkMode);
     }
-
-    private string IconColour => IsDarkMode ? Colors.Gray.Darken4 : Colors.DeepOrange.Lighten4;
-    private string IconText => IsDarkMode ? Colors.DeepOrange.Default : Colors.Shades.Black;
-    private string HoverPink => IsDarkMode ? Colors.Pink.Darken2 : Colors.Pink.Lighten4;
-    private string HoverBlue => IsDarkMode ? Colors.Blue.Darken2 : Colors.Blue.Lighten4;
-    private string HoverGreen => IsDarkMode ? Colors.Green.Darken2 : Colors.Green.Lighten4;
 }

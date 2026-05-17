@@ -1,16 +1,18 @@
-﻿@using AbbiePortfolio.Components.ComponentLibrary
+@using AbbiePortfolio.Components.ComponentLibrary
 
-<MudContainer MaxWidth="MaxWidth.Medium">
-    <div class="skills">
-        <Skill Name="C#" Icon="@_c" />
-        <Skill Name="ASP.NET Core" Icon="@_aspDotNet" />
-        <Skill Name="Blazor" Icon="@_blazor" />
-        <Skill Name="Azure" Icon="@_azure" />
-        <Skill Name="UI/UX Design" Icon="@_ui" />
-    </div>
-</MudContainer>
-
-
+<section class="editorial-section" id="skills" style="scroll-margin-top: 56px; padding-bottom: 6rem;">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <hr class="section-rule" />
+        <p class="section-label mb-8">Core Skills</p>
+        <div class="skills">
+            <Skill Name="C#" Icon="@_c" />
+            <Skill Name="ASP.NET Core" Icon="@_aspDotNet" />
+            <Skill Name="Blazor" Icon="@_blazor" />
+            <Skill Name="Azure" Icon="@_azure" />
+            <Skill Name="UI/UX Design" Icon="@_ui" />
+        </div>
+    </MudContainer>
+</section>
 
 @code {
     private readonly string _c = "images/Icons/Inchworm.svg";
