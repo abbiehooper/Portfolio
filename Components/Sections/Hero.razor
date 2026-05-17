@@ -3,48 +3,27 @@
 
 <section class="hero-section">
     <MudContainer MaxWidth="MaxWidth.Large">
-        <MudGrid Justify="Justify.Center" Spacing="6">
-            @* Profile Image *@
-            <MudItem xs="12" md="5"
-                Class="d-flex justify-center justify-md-end align-center">
-                <div class="hero-image-container">
-                    <img src="images/profile.png"
-                         alt="Abbie - Full Stack Developer"
-                         class="hero-image" />
-
-                    @* Tick Pills - MUST be inside hero-image-container for positioning *@
-                    <TickPill Text="ASP.NET Engineer" ContainerClass="tick-one"/>
-                    <TickPill Text="UI/UX Designer" ContainerClass="tick-two"/>
-                    <TickPill Text="Azure Certified" ContainerClass="tick-three"/>
-                </div>
-            </MudItem>
-            @* Hero Content *@
-            <MudItem xs="12" md="7" Class="d-flex align-center"
-                     Style="flex-basis: unset;">
-                <div class="hero-content">
-                    <p class="hero-label fade-in-item fade-in-1">Full Stack Developer</p>
-                    <MudText Typo="Typo.h1" Class="fade-in-item fade-in-2">
-                        <span class="hero-title">Hi, I'm<br /><em>Abbie Hooper</em></span>
-                    </MudText>
-                    <MudText Typo="Typo.body1" Class="hero-description fade-in-item fade-in-3">
-                        With over 3 years of experience as a full stack software engineer
-                        for global insurance company Howden. I'm passionate about creating
-                        web applications that deliver great user experiences.
-                    </MudText>
-                    <div class="fade-in-item fade-in-4">
-                        <UnderlineButton OnClick=DownloadCV Text="Download CV →" />
-                    </div>
-                </div>
-            </MudItem>
-        </MudGrid>
+        <div class="hero-inner">
+            <div class="hero-heading fade-in-item fade-in-1">
+                <span class="hero-greeting">Hi, I'm</span>
+                <h1 class="hero-name"><em>Abbie Hooper</em></h1>
+            </div>
+            <div class="hero-footer fade-in-item fade-in-2">
+                <p class="hero-role">Full Stack Developer</p>
+                <p class="hero-description">
+                    With over 3 years of experience as a full stack software engineer
+                    for global insurance company Howden. I'm passionate about creating
+                    web applications that deliver great user experiences.
+                </p>
+                <UnderlineButton OnClick=DownloadCV Text="Download CV →" />
+            </div>
+        </div>
     </MudContainer>
 </section>
 
 @code {
-
     private async Task DownloadCV()
     {
         await JS.InvokeVoidAsync("downloadFile", "/files/Abigail_Hooper_CV.docx", "Abigail_Hooper_CV.docx");
     }
-
 }

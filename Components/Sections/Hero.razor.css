@@ -1,139 +1,71 @@
-/* Section Styling */
 .hero-section {
-    padding: 6rem 0 4rem;
-    min-height: 85vh;
+    padding: 7rem 0 4rem;
+    min-height: 88vh;
     display: flex;
     align-items: center;
 }
 
-/* Image Container */
-.hero-image-container {
-    position: relative;
-    width: 340px;
-    height: 420px;
-}
-
-/* Tick Pills - Hidden by default, scattered positions */
-::deep .tick-one,
-::deep .tick-two,
-::deep .tick-three {
-    position: absolute;
-    z-index: 2;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(15px) scale(0.9);
-}
-
-::deep .tick-one {
-    top: -10px;
-    left: -60px;
-}
-
-::deep .tick-two {
-    top: 40%;
-    right: -80px;
-}
-
-::deep .tick-three {
-    bottom: 20px;
-    left: -40px;
-}
-
-/* Sequential pop-up animations on hover */
-.hero-image-container:hover ::deep .tick-one {
-    animation: pop-up-fade 3s ease-in-out 0s forwards;
-}
-
-.hero-image-container:hover ::deep .tick-two {
-    animation: pop-up-fade 3s ease-in-out 1s forwards;
-}
-
-.hero-image-container:hover ::deep .tick-three {
-    animation: pop-up-fade 3s ease-in-out 2s forwards;
-}
-
-@keyframes pop-up-fade {
-    0% {
-        opacity: 0;
-        transform: translateY(15px) scale(0.9);
-    }
-
-    20% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    70% {
-        opacity: 1;
-        transform: translateY(-20px) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-35px) scale(0.95);
-    }
-}
-
-/* Profile Image */
-.hero-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    z-index: 1;
-    opacity: 0;
-    filter: grayscale(15%);
-    outline: 1px solid var(--mud-palette-divider);
-    outline-offset: 6px;
-    animation: fade-in-photo 0.8s ease-out 0.3s forwards;
-}
-
-@keyframes fade-in-photo {
-    to {
-        opacity: 1;
-    }
-}
-
-/* Content Styling */
-.hero-content {
-    max-width: 520px;
+.hero-inner {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 2.5rem;
+    width: 100%;
 }
 
-/* Editorial label above title */
-.hero-label {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+/* Heading block */
+.hero-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.hero-greeting {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 400;
     color: var(--mud-palette-text-secondary);
+    line-height: 1.2;
+}
+
+.hero-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(4rem, 11vw, 9.5rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 0.88;
+    color: var(--mud-palette-text-primary);
     margin: 0;
 }
 
-/* Main Title */
-.hero-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 400;
-    line-height: 1.05;
-    color: var(--mud-palette-text-primary);
+/* Footer bar — three columns: role · bio · cta */
+.hero-footer {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: start;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--mud-palette-divider);
 }
 
-.hero-title em {
-    font-style: italic;
+.hero-role {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mud-palette-text-secondary);
+    margin: 0;
+    padding-top: 0.2rem;
+    white-space: nowrap;
 }
 
 .hero-description {
     color: var(--mud-palette-text-secondary);
     line-height: 1.7;
-    max-width: 42ch;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
-/* Staggered fade-in for content items */
+/* Staggered fade-in */
 .fade-in-item {
     opacity: 0;
     transform: translateY(16px);
@@ -141,9 +73,7 @@
 }
 
 .fade-in-1 { animation-delay: 0.1s; }
-.fade-in-2 { animation-delay: 0.25s; }
-.fade-in-3 { animation-delay: 0.4s; }
-.fade-in-4 { animation-delay: 0.55s; }
+.fade-in-2 { animation-delay: 0.3s; }
 
 @keyframes fade-in-up {
     to {
@@ -155,33 +85,18 @@
 /* Responsive */
 @media (max-width: 960px) {
     .hero-section {
-        padding: 4rem 0 3rem;
+        padding: 5rem 0 3rem;
         min-height: auto;
     }
 
-    .hero-title {
-        text-align: center;
-    }
-
-    .hero-label {
-        text-align: center;
-    }
-
-    .hero-content {
-        text-align: center;
-        align-items: center;
-    }
-
-    .hero-image-container {
-        margin-bottom: 2.5rem;
-        width: 280px;
-        height: 340px;
+    .hero-footer {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 }
 
 @media (max-width: 600px) {
-    .hero-image-container {
-        width: 240px;
-        height: 300px;
+    .hero-name {
+        font-size: clamp(3rem, 13vw, 4.5rem);
     }
 }
