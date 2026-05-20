@@ -8,23 +8,30 @@
             <MudText Typo="Typo.h2" Style="font-style: italic; font-weight: 400;">Contact</MudText>
         </div>
 
-        <div class="contact-content">
-            <div class="d-flex flex-column gap-4">
-                <div>
-                    <p class="section-label">Direct</p>
-                    <p class="email">abigailshooper@gmail.com</p>
-                </div>
+        <MudContainer MaxWidth="MaxWidth.Large">
+            <MudGrid Spacing="8">
+                <MudItem xs="12" md="6" lg="3" xl="3">
+                    <div class="d-flex flex-column gap-4">
+                        <div>
+                            <p class="section-label">Direct</p>
+                            <p class="email">abigailshooper@gmail.com</p>
+                        </div>
 
-                <div>
-                    <p class="section-label">Hours</p>
-                    <p class="hours">
-                        Mon — Thu, 09:30 — 17:00 GMT
-                        <br />
-                        Replies within two working days.
-                    </p>
-                </div>
-            </div>
-            <ContactForm />
-        </div>
+                        <div>
+                            <p class="section-label">Hours</p>
+                            <p class="hours">
+                                Mon — Thu, 09:30 — 17:00 GMT
+                                <br />
+                                Replies within two working days.
+                            </p>
+                        </div>
+                    </div>
+                </MudItem>
+
+                <MudItem xs="12" md="6" lg="9" xl="9">
+                    <ContactForm />
+                </MudItem>
+            </MudGrid>
+        </MudContainer>
     </MudContainer>
 </section>
